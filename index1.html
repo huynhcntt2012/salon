@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+<head>
+<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/index.css" rel="stylesheet">
+	<link href="css/home.css" rel="stylesheet">
+	<link href="css/footer.css" rel="stylesheet">
+	<link href="css/full-slider.css" rel="stylesheet">
+
+	<link rel="stylesheet" href="asset/nivoslider/themes/custom/custom.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="asset/nivoslider/nivo-slider.css" type="text/css" media="screen" />
+	<link href="https://fortawesome.github.io/Font-Awesome/assets/font-awesome/css/font-awesome.css" rel="stylesheet">
+</head>
+<body>
+	
+		<div id="content" class="site-content" style="height:100%;">
+			    <div id="myCarousel" class="carousel slide">
+				<!-- Indicators -->
+
+				<!-- Wrapper for Slides -->
+				<div class="carousel-inner">
+					<div class="item">
+						<!-- Set the first background image using inline CSS below. -->
+						<div class="fill" style="background-image:url('https://ld-wp.template-help.com/wordpress_58991/wp-content/uploads/2016/05/image8.jpg');"></div>
+						<div class="carousel-caption">
+						
+								<div class="tm_pb_slide_content">
+								<h2 style="text-align: center;"><em>all of our creations are</em> inspired by you as a person</h2>
+								<p style="text-align: center;">Keratin Treatments, Perms/Relaxers, Corrective Color and Extensions Based Upon Consultation</p>
+								<p>&nbsp; </p></div>
+								<a href="https://ld-wp.template-help.com/wordpress_58991/our-staff/stacy-waters/" class="tm_pb_more_button tm_btn_1 tm_pb_button">Book an Appointment</a>
+								</div>  
+								
+						
+					</div>
+					<div class="item">
+						<!-- Set the second background image using inline CSS below. -->
+						<div class="fill" style="background-image:url('https://ld-wp.template-help.com/wordpress_58991/wp-content/uploads/2016/05/image10.jpg');"></div>
+						<div class="carousel-caption">
+							<h2>Caption 2</h2>
+						</div>
+					</div>
+					<div class="item active">
+						<!-- Set the third background image using inline CSS below. -->
+						<div class="fill" style="background-image:url('https://ld-wp.template-help.com/wordpress_58991/wp-content/uploads/2016/05/image9.jpg');"></div>
+						<div class="carousel-caption">
+							<h2>Caption 3</h2>
+						</div>
+					</div>
+				</div>
+
+				<!-- Controls -->
+				<a class="left carousel-control custom" href="#myCarousel" data-slide="prev">
+					<span class="icon-prev"></span>
+				</a>
+				<a class="right carousel-control custom" href="#myCarousel" data-slide="next">
+					<span class="icon-next"></span>
+				</a>
+
+			</div>
+		</div>
+		
+	
+		
+	<!-- Bootstrap Core JavaScript -->
+	<script src="js/jquery.js"></script>
+
+    
+    <script src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="asset/nivoslider/jquery.nivo.slider.js"></script>
+	<script>
+		$('.carousel').carousel({
+			interval: 5000 //changes the speed
+		})
+    </script>
+	<script type="text/javascript">
+		$(window).load(function() {
+			$('#slider').nivoSlider();
+		});
+		var flag = 0;
+		var flag1 = 0;
+		$(".menu-toggle").click(function(){
+
+			if(flag == 0){
+				$(".main-navigation").addClass("toggled");
+				flag = 1 ;
+			}else{
+				$(".main-navigation").removeClass("toggled");
+				flag = 0 ;
+			}		
+		});
+		$(".sub-menu-toggle").click(function(){
+			if(flag == 0){
+				$(this).addClass("active");
+				$(this).parent().addClass("sub-menu-open");
+				flag = 1 ;
+			}else{
+				$(this).parent().removeClass("sub-menu-open");
+				$(this).removeClass("active");
+				flag = 0 ;
+			}			
+		});
+		$(".tm-pb-arrow-next").off().on("click",function(){
+			 $(".tm_pb_slide").each(function(){
+				var index = $(".tm_pb_slide").index(this);
+				if(index == 0){
+					$(this).addClass("tm-pb-moved-slide");
+				}
+				if(index ==1){
+					$(this).addClass("tm-pb-active-slide");	
+				}
+				if(index ==2){
+					$(this).css("z-index",1)
+				}
+				if($(this).is(':visible')){
+					var index = $('.tm_pb_slide').index(this);
+					console.log(index);
+				}
+				console.log(index);
+			 });
+			 
+			
+		});
+	</script>
+</body>
+</html>
